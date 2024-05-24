@@ -26,6 +26,6 @@ numero=int(input("Ingrese un numero:"))
 
 
 multi=0
-for i in range(1,11)
+for i in range(1,11):
    multi=numero*i
    print(f"{numero} x{i} = {multi}")

@@ -3,6 +3,7 @@ bandera=111
 num=0
 
 while num!=bandera:
-    num=int(input("Ingresa un numero:"))
+    
     if num==bandera:
         print("salida")
+        

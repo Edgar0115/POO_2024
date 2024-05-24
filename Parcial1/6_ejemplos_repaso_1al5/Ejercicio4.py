@@ -4,8 +4,10 @@
 # y mostrar por pantalla el resultado
 # 
 
-num1= float(input("Ingresa el primer numero:"))
-num2= float(input("Ingresa el segundo numero:"))
+num1= int(input("Ingresa el primer numero: "))
+num2= int(input("Ingresa el segundo numero: "))
+
+
 
 suma= num1+num2
 resta= num1-num2
