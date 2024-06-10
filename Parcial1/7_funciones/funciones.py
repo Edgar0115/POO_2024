@@ -1,72 +1,89 @@
-#una funcion es un conjunto de instrucciones agrupadas bajo un nombre en 
-#particular como un programa mas pequeño que cumple una funcion especifica. La
-#funcion se puede reutilizar con el simple hecho de invocarla es decir
-#mandarla llamar
+#una función es un conjunto de instrucciones agrupadas bao un nombre en particulas como un programa más pqueño que comple una función especifica, la función se puede reutilizar con el simple hecho de incovarla es decir mandarla a llamar
 
-#sintaxis:
+#Sintaxis:
+def nombredeMiFuncion():
+    #bloque o conjunto de intrucciónes
+    print("bloque o conjunto de intrucciónes")
 
-#def nombredeMifuncion(parametros):
-    #bloque o conjunto de instrucciones
-    
- #   nombredeMifuncion(parametros)
-    
-#Las funciones pueden sr de 4 tipos
-#1.- Funcion que no recibe parametros y no regresa valor
-#2.- Funcion que no recibe parametros y regresa valor
-#3.- Funcion que recibe parametros y no regresa valor
-#4.- Funcion que recibe parametros y regresa valor
+nombredeMiFuncion()
 
-#Ejemplo 1: Crear una funcion para imprimir nombres de personas 
-#1.- Funcion que no recibe parametros y no regresa valor
-def solicitarNombres():
+#las funciones puedes ser de 4 tipos
+#1.- Funciones que no reciben parametros y no regresa valor
+#2.- funciones que no recibe parametro y regresa valor
+#3.- funciones que no recibe parametro y NO regresa valor
+#4.- funciones que recibe parametro y regresa valor
+
+#Ejemplo 1 - crear una función para imprimir nombres de personas
+def solicitarNombre():
     nombre=input("Ingresa el nombre completo: ")
-    
-    solicitarNombres()
-    
-    
-    #Ejemplo 2: sumar dos numeros 
-    def suma():
-        n1=int(input("Numero 1: "))
-        n2=int(input("Numero 2"))
-        suma=n1+n2
-        print(f"{n1} + {n2} = {suma}")
-        
-    suma()
-    
-    
-    #Ejemplo 3 sumar dos numeros 
-    
-    def suma():
-        n1=int(input("Numero 1: "))
-        n2=int(input("Numero 2"))
-        suma=n1+n2
-        return suma
-    
-    resultado_suma=suma()
-    print(f"La suma es: {resultado_suma}")
+
+solicitarNombre()
+
+#Ejemplo 2 - Realizar sumatoria (No recibe parametro pero regresa valor)
+def suma():
+    n1=int(input("Número #1: "))
+    n2=int(input("Número #2: "))
+    suma = n1+n2
+    print(f"La suma de los números es {suma}")
+
+suma()
 
 
-#Ejemplo 4 sumar dos numeros
-#3.-Funcion que recibe parametros y no regresa valor
-    def suma(num1,num2):
-        suma=num1+num2
-        return suma
-        
-        num1=int(input("Numero 1: "))
-        num2=int(input("Numero 2"))
-        resultado_suma(n1, n2)
-    
-    resultado_suma=suma()
+#Ejemplo 3 - Sumar números (No recibe parametro pero regresa valor)
+
+def suma():
+    n1=int(input("Número #1: "))
+    n2=int(input("Número #2: "))
+    suma = n1+n2
+    return suma
+
+resultado_suma=suma()
+print(f"La suma de los números es {suma()}")
+print(f"La suma de los números es {resultado_suma}")
 
 
-#Ejemplo 6 crear un programa que solicite a traves de una funcion la   
-#siguiente informacion: Nombre del paciente, Edad, Estatura, Tipo de sangre.
-#Utilizar los 4 tipos de funciones  
+#Ejmplo 4 - Realizar suma
+#funciones que recibe parametro y NO regresa valor
 
-    def info(Nombre, Edad, Estatura, Tipo):
-        Nombre=str(input("Ingrese nombre del paciente: "))
-        Edad=int(input("Ingresar edad: "))
-        Estatura=float(input("Ingresar estatura: "))
-        Tipo=str(input("Ingresar tipoo de sangre: "))
-        
-        
+def suma(n1,n2):
+    suma = n1+n2
+    print(suma)
+
+n1=int(input("Número #1: "))
+n2=int(input("Número #2: "))
+suma(n1,n2)
+
+
+#Ejmplo 5 - Realizar suma
+#funciones que recibe parametro y regresa valor
+
+def suma(n1,n2):
+    suma = n1+n2
+    return suma
+
+n1=int(input("Número #1: "))
+n2=int(input("Número #2: "))
+suma(n1,n2)
+
+
+
+#Ejemplo - Tarea
+#Crear un programa que solicite a traves de una función la siguiente información
+#Nombre de paciente
+#Edad
+#Estatura
+#Tipo de sangre
+#Utilzar los 4 tipos de funciónes
+
+def infoPaciente():
+    nombre = input("Escribe el nombre del paciente")
+    edad = input("Escribe la edad del paciente")
+    eatatura = input("Escribe la  estatura del paciente")
+    tipoSangre = input("Escribe el tipo de sangre del paciente")
+    return(f"Nombre: ")
+
+
+valor= infoPaciente()
+#Recibe parametros pero no regresa valor
+def infoPaciente2(nom, edad, est, sandre):
+    return
