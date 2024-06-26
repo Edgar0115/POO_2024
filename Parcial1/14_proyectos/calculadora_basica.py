@@ -1,5 +1,4 @@
 import os
-import math
 """
 i = True
 while i:
@@ -74,31 +73,20 @@ def OperacionesArit(n1,n2):
         divicion=n1/n2
         return(f"{n1} / {n2} = {divicion}")
     
-    #=====Potencia=====
-    elif opcion=="5" or opcion=="POTENCIA":
-        potencia=n1**n2
-        return(f"{n1} ** {n2} = {potencia}")
-    
-    #=====Raíz======
-    elif opcion=="6" or opcion== "RAIZ":
-        raiz=n1**0.5
-        return(f"La raiz cuadrada de {n1} es: {raiz}")
-        
 
 i=True
 while i:
+    os.system("Clear")
     print(f"========== \n Calculadora Básica \n=============")
     print("1.- Suma")
     print("2.- Resta")
     print("3.- Multiplicación")
     print("4.- Divición")
-    print("5.- Potencia")
-    print("6.- Raiz")
-    print("7.- Salir")
+    print("5.- Salir")
     opcion= input("Elige una opción ").upper()
 
     #if opcion!=1 or opcion!=2 or opcion!=3 or opcion!=4:
-    if opcion!="7": 
+    if opcion!="5": 
         SolicitarNumeros()
         print(OperacionesArit(n1,n2))
     else:
