@@ -1,0 +1,67 @@
+
+
+
+
+-- Primero, crea la base de datos si aún no existe
+CREATE DATABASE IF NOT EXISTS bd_pos;
+USE bd_pos;
+
+-- Luego, crea las tablas
+CREATE TABLE IF NOT EXISTS clientes (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    domicilio VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20),
+    correo VARCHAR(100) UNIQUE,
+    rfc VARCHAR(13) UNIQUE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS detalleTicket (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    ticket_id INT(11) NOT NULL,
+    producto_id INT(11) NOT NULL,
+    cantidad INT(11) NOT NULL,
+    precio_unitario DECIMAL(10,2) NOT NULL,
+    subtotal DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (ticket_id) REFERENCES ticket(id),
+    FOREIGN KEY (producto_id) REFERENCES productos(id)
+);
+
+CREATE TABLE IF NOT EXISTS empleados (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    usuario_id INT(11),
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE IF NOT EXISTS productos (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    precio_venta DECIMAL(10,2) NOT NULL,
+    precio_compra DECIMAL(10,2),
+    stock INT(11) NOT NULL DEFAULT 0,
+    codigo_barras VARCHAR(50) UNIQUE,
+    unidad_medida VARCHAR(20),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS ticket (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    fecha DATETIME NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    tipo_pago ENUM('Efectivo','Tarjeta','Transferencia','Otro') NOT NULL,
+    cliente_id INT(11),
+    empleado_id INT(11),
+    PRIMARY KEY (id),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY (empleado_id) REFERENCES empleados(id)
+);
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);

@@ -7,11 +7,11 @@ def menu_principal():
     while True:    
         borrarPantalla()
         print("""
-      .::  Menu Principal ::. 
-          1.- Registro
-          2.- Login
-          3.- Salir 
-          """)
+    .::  Menu Principal ::. 
+        1.- Registro
+        2.- Login
+        3.- Salir 
+        """)
         opcion = input("\t Elige una opción: ").upper()
 
         if opcion == '1' or opcion=="REGISTRO":

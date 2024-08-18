@@ -6,7 +6,7 @@ try:
         host='localhost',
         user='root',
         password='',
-        database='bd_python'
+        database='bd_notas'
     )
     
 except Exception as e:

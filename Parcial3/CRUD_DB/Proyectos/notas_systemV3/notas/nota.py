@@ -1,5 +1,5 @@
 
-from conexionBD import *
+from Parcial3.CRUD_DB.Proyectos.notas_systemV3.notas.conexionBD import *
 
 class Nota:
     def __init__(self, usuario_id, titulo, descripcion):
@@ -31,15 +31,15 @@ class Nota:
 
     @staticmethod
     def actualizar(id, titulo, descripcion):
-       try:
-         cursor.execute(
+      try:
+        cursor.execute(
             "update notas set titulo=%s,descripcion=%s where id=%s",
             (titulo,descripcion,id)
-         )
-         conexion.commit()
-         return True
-       except: 
-         return False
+        )
+        conexion.commit()
+        return True
+      except: 
+        return False
     
     @staticmethod
     def eliminar(id):
